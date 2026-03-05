@@ -43,5 +43,21 @@ DOI is valid and reachable.
 The program separates DOI validation and network checking
 to make the code modular and easier to maintain.
 
+# DOI Check Tool
 
+## Description
+This project is a DOI checking tool. It checks whether a DOI exists and can be resolved.
+
+## Features
+- Check DOI format
+- Verify DOI accessibility
+
+## Usage
+Enter a DOI and the program checks if it is valid.
+
+Example:
+10.5281/zenodo.17173703
+
+## Design
+The program validates the DOI string and sends a request to a DOI resolver.
 
