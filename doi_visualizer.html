@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOI Research Link Visualizer</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+h1 { font-size: 22px; }
+input { width: 100%; padding: 10px; margin-top: 10px; font-size: 16px; }
+button { padding: 10px 15px; margin-top: 10px; font-size: 16px; }
+.links { margin-top: 20px; }
+.link { margin: 8px 0; }
+</style>
+</head>
+<body>
+
+<h1>DOI Research Link Visualizer</h1>
+<p>Enter a DOI to generate links for citations, indexing, and mentions.</p>
+
+<input id="doiInput" placeholder="Example: 10.5281/zenodo.17173703">
+<button onclick="generateLinks()">Generate Links</button>
+
+<div class="links" id="links"></div>
+
+<script>
+function generateLinks(){
+    const doi = document.getElementById("doiInput").value.trim();
+    if(!doi){
+        alert("Enter a DOI");
+        return;
+    }
+
+    const encoded = encodeURIComponent(doi);
+
+    const services = [
+        ["Open DOI Page", "https://doi.org/" + doi],
+        ["Zenodo Record", "https://zenodo.org/search?q=" + encoded],
+        ["Google Scholar Search", "https://scholar.google.com/scholar?q=" + encoded],
+        ["Semantic Scholar", "https://www.semanticscholar.org/search?q=" + encoded],
+        ["OpenAlex", "https://openalex.org/works?search=" + encoded],
+        ["Crossref Metadata", "https://api.crossref.org/works/" + doi],
+        ["Altmetric", "https://www.altmetric.com/details/doi/" + doi],
+        ["CORE Search", "https://core.ac.uk/search?q=" + encoded]
+    ];
+
+    const container = document.getElementById("links");
+    container.innerHTML = "";
+
+    services.forEach(service => {
+        const div = document.createElement("div");
+        div.className = "link";
+        div.innerHTML = `<a href="${service[1]}" target="_blank">${service[0]}</a>`;
+        container.appendChild(div);
+    });
+}
+</script>
+
+</body>
+</html>
