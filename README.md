@@ -51,3 +51,26 @@ To run this project in your own environment:
 3. Launch the application: `python app.py`
 4. Access the dashboard: Open your browser to `http://127.0.0.1:5000`
 EOF
+cat << 'EOF' > README.md
+# Zenodo Data Insights: Research Trend Analyzer
+#### Video Demo: https://youtube.com/shorts/BASYArYWZ_Y?si=l0tv4YnSnGeKsH7Q
+#### Name: Takuya Nemoto
+#### GitHub: cpsbvbng26-dotcom
+#### City: Utsunomiya, Japan
+
+## Description:
+This project is an advanced web-based analytical tool designed to interface directly with the Zenodo REST API. Zenodo is an open-access repository operated by CERN, hosting a vast collection of research papers and datasets. My application allows researchers to query this metadata and extract immediate, real-time insights into the global landscape of academic publishing. The tool automates the retrieval, cleaning, and visualization of academic metadata, transforming raw JSON responses into an interactive dashboard. This is essential for understanding the distribution of knowledge across different languages and media types in various research fields.
+
+## Distinctiveness and Complexity:
+This project stands out by integrating live API communication, data engineering with Pandas, and interactive visualization with Plotly. Unlike simple applications, it handles real-time data streams and manages complex JSON payloads, flattening them into structured DataFrames for analysis. The use of Plotly ensures that researchers can interact with the data through hover-effects and dynamic filtering.
+
+## File Functionality:
+- **app.py**: Manages Flask routing and the core API logic.
+- **templates/index.html**: The search interface for users.
+- **templates/results.html**: The dashboard that renders the visual charts.
+- **static/styles.css**: Ensures a professional and responsive academic layout.
+- **requirements.txt**: Lists dependencies like flask, pandas, and plotly.
+
+## Design Choices:
+I chose Flask for its flexibility and Plotly for its interactivity, which is crucial for data exploration. The application is styled with Bootstrap 5 to ensure accessibility across all devices.
+EOF
