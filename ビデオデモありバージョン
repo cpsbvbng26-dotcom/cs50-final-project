@@ -1,0 +1,30 @@
+# Zenodo Data Insights: Research Trend Analyzer
+#### Video Demo: https://youtube.com/shorts/BASYArYWZ_Y?si=l0tv4YnSnGeKsH7Q
+
+#### Description:
+This project is a web-based analytical tool designed to interface with the **Zenodo REST API**. It allows researchers to query metadata from Zenodo’s global repository and visualize trends, particularly language distribution and publication types.
+
+The motivation behind this tool is to support the "Trinity-Infinity (III∞)" framework by providing a streamlined way to track and analyze academic data across diverse disciplines.
+
+## Distinctiveness and Complexity
+This project satisfies the CS50 requirements through the following complexities:
+1. **Real-time API Integration**: It communicates with Zenodo's backend using the Python `requests` library, handling live data streams.
+2. **Data Transformation**: Using `Pandas`, the application converts complex, nested JSON responses into structured DataFrames for analysis.
+3. **Interactive Visualization**: It utilizes `Plotly` to render dynamic charts in the browser, providing a more intuitive user experience than static tables.
+4. **Flask Framework**: The backend is built with Flask, managing various routes and ensuring secure and efficient form processing.
+
+## File Contents
+- `app.py`: The main application script that manages API calls, data processing logic, and server-side routing.
+- `templates/index.html`: The search interface, built with a focus on usability and professional academic aesthetics.
+- `templates/results.html`: The dashboard that displays both the interactive Plotly chart and the detailed result table.
+- `static/styles.css`: Custom CSS to provide a clean, responsive layout.
+- `requirements.txt`: A list of all necessary Python libraries (`flask`, `pandas`, `plotly`, `requests`) for easy environment setup.
+
+## Design Choices
+I chose to use **Plotly** because academic data requires exploration. Unlike static images, Plotly allows users to hover over data points to see specific values. For the frontend, I used **Bootstrap 5** to ensure the tool remains fully responsive and accessible across all devices.
+
+## Installation and Usage
+1. Clone the repository and navigate to the project folder.
+2. Install the requirements:
+   ```bash
+   pip install -r requirements.txt
